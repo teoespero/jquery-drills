@@ -21,9 +21,35 @@
 	<body>
 		<h1>jQuery Demo</h1>
 		<ul>
-			<li>Item 01</li>
-			<li>Item 02</li>
-			<li>Item 03</li>
+			<li id="itm01"><a href="http://google.com">Item 01 - Google</a></li>
+			<li id="itm02"><a href="http://bing.com">Item 02 - Bing</a></li>
+			<li id="itm03"><a href="http://yahoo.com">Item 03 - Yahoo</a></li>
+
+			<script type="text/javascript">
+				var styles = {
+						color: "red",
+						background : "pink",
+						border: "2px solid red"
+					}
+
+				var liStyleOn = {
+						border: "3px dashed purple",
+						background: "rgba(89,45,20,0.5)"
+					}
+
+				var liStyleOff = {
+						border: "none",
+						background: "white"
+					}
+
+				$("h1").css(styles);
+				$("li").css("color", "blue");
+				$("li a").hover(function(){
+				    $(this).css(liStyleOn);
+				    }, function(){
+				    $(this).css(liStyleOff);
+				});
+			</script>
 		</ul>
 	</body>
 </html>
